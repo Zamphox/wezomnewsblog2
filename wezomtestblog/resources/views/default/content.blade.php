@@ -15,7 +15,7 @@
         <div style="background: #e9ecef; border-radius: 10px; padding: 10 0 10 1" class="row">
         <div class="col-md-12">
           <h5 class="text-center">{{ $article->name }}</h5>
-          <img class="mx-auto d-block" style="width:90%; max-width: 850px; max-height: 500px; min-height: 200px" src="{{ route('show_image', ['filename'=>$article->img]) }}" alt="{{ route('show_image', ['filename'=>$article->img]) }}"><br>
+          <img class="mx-auto d-block" style="width:90%; max-width: 850px; max-height: 500px; min-height: 200px" src="{{ asset('storage/images/'.$article->img) }}" alt="{{ route('show_image', ['filename'=>$article->img]) }}"><br>
           <p>{{ $article->text_short }}</p>
           <div class="row">
             <div class='col-md-6'>
