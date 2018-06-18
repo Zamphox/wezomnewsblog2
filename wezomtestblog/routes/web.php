@@ -20,6 +20,7 @@ Route::group(['middleware'=>'web'], function() {
 	Route::get('/category/{category}',['as'=>'category','uses'=>'TagController@showCategory']);
 	Route::get('/storage/images/{filename}',['as'=>'show_image','uses'=>'AdminController@show_image']);
 	Route::get('/article/{id}/{name}',['as'=>'article', 'uses'=>'ArticleController@show']);
+	Route::get('/tag/{tag}',['as'=>'tag','uses'=>'TagController@showTag']);
 
 	Route::auth();
 	Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -29,7 +30,6 @@ Route::group(['middleware'=>'web'], function() {
 
 Route::group(['middleware'=>'auth'], function() {
 	Route::post('/article/{id}/{name}',['as'=>'comment', 'uses'=>'CommentsController@create']);
-	Route::get('/tag/{tag}',['as'=>'tag','uses'=>'TagController@showTag']);
 
 
 });

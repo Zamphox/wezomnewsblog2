@@ -9,6 +9,7 @@
     <link rel="icon" href="../../favicon.ico">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
   </head>
 
   <body>
@@ -18,24 +19,24 @@
   <a class="navbar-brand" href="{{ route('home') }}">Новостной блог</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="{{ route('home') }}">Домой</a>
-      <a class="nav-item nav-link" href="{{ route('about') }}">О проекте</a>
-      <a class="nav-item nav-link" href="{{ route('contact') }}">Контакты</a>
-      <a class="nav-item nav-link" href="{{ route('tags') }}">Тэги</a>
+      <a class="nav-item nav-link nav-anim" href="{{ route('home') }}">Домой</a>
+      <a class="nav-item nav-link nav-anim" href="{{ route('about') }}">О проекте</a>
+      <a class="nav-item nav-link nav-anim" href="{{ route('contact') }}">Контакты</a>
+      <a class="nav-item nav-link nav-anim" href="{{ route('tags') }}">Тэги</a>
     </div>
 
     @if(!Auth::check())
     <div class='navbar-nav ml-auto'>
-      <a class="nav-item nav-link" href="{{ route('login') }}">Логин</a>
-      <a class="nav-item nav-link" href="{{ route('register') }}">Регистрация</a>
+      <a class="nav-item nav-link nav-anim" href="{{ route('login') }}">Логин</a>
+      <a class="nav-item nav-link nav-anim" href="{{ route('register') }}">Регистрация</a>
     </div>
     @else
     <div class='navbar-nav ml-auto'>
       @if(Auth::user()->has_admin_rights)
-      <a class="nav-item nav-link" href="{{ route('admin') }}">Создать пост</a>
+      <a class="nav-item nav-link nav-anim" href="{{ route('admin') }}">Создать пост</a>
       @endif
-      <a class="nav-item nav-link">{{ Auth::user()->name }}</a>
-      <a class="nav-item nav-link" href="{{ url('/logout') }}">Выйти</a>
+      <a class="nav-item nav-link nav-anim">{{ Auth::user()->name }}</a>
+      <a class="nav-item nav-link nav-anim" href="{{ url('/logout') }}">Выйти</a>
     </div>
     @endif
   </div>
@@ -58,4 +59,5 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
 	<script src='https://www.google.com/recaptcha/api.js?hl=ru'></script>
   </body>
+
 </html>
