@@ -1,0 +1,17 @@
+.nav-anim {
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom: 1px solid white;
+	transition: .25s ease-in-out;
+}
+
+.nav-anim:hover {
+	background: #e9ecef;
+	transform: scale(1.2);
+	border-bottom: 1px solid #6c757d;
+
+}
+
+.navbar {
+	padding-bottom: 3px;
+}
